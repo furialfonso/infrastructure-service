@@ -1,0 +1,22 @@
+services:
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    restart: unless-stopped
+    ports:
+      - 3100:3100
+    volumes:
+      - ./loki-config.yml:/mnt/config/loki-config.yml
+      - loki-storage:/loki
+    command:
+      - '-config.file=/mnt/config/loki-config.yml'
+    networks:
+      - cownetwork
+
+volumes:
+  loki-storage:
+
+
+networks:
+  cownetwork:
+    external: true
