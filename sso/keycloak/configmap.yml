@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-configmap
+data:
+  KEYCLOAK_ENABLE_STATISTICS: "true"
+  KEYCLOAK_ENABLE_HEALTH_ENDPOINTS: "true"
+  KEYCLOAK_DATABASE_HOST: postgres-service
+  KEYCLOAK_DATABASE_NAME: keycloak
