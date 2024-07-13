@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+  labels:
+    app: sso
+spec:
+  ports:
+  - name: postgres
+    port: 5432
+    nodePort: 30000
+  type: NodePort
+  selector:
+    app: postgres

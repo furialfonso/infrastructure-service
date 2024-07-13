@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-configmap
+data:
+  initdb.sh: |-
+   #!/bin/bash
+   set -e
+   psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
+    CREATE USER $USER WITH PASSWORD '$PASS';
+    CREATE DATABASE $DATA_BASE;
+    GRANT ALL PRIVILEGES ON DATABASE $DATA_BASE TO $USER;
+    \c $DATA_BASE
+    GRANT ALL PRIVILEGES ON SCHEMA public TO $USER;
+   EOSQL
