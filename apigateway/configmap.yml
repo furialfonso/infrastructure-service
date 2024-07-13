@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-gateway-configmap
+  labels:
+    app: api-gateway
+data:
+  application.yml: |
+    server:
+      port: 8081
+    spring:
+      application:
+        name: api-gateway
+      cloud:
+        gateway:
+          discovery:
+            locator:
+              enabled: true
+          routes:
+            - id: demo-service
+              uri: http://demo-service:8082
+              predicates: 
+                - Path=/ping
+            - id: authentication
+              uri: http://sso-service:8083
+              predicates:
+                - Path=/auth/login, /auth/logout, /auth/valid-token
+            - id: authorization
+              uri: http://sso-service:8083
+              predicates:
+                - Path=/users/**
+              filters:
+                - name: AuthorizationFilter

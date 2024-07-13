@@ -7,6 +7,20 @@ Infrastructure build on kubernetes with minikube
 
 ### Technologies
   - *Kubernetes*: Portable and extensible open source platform for managing workloads and services.
+  - *Keycloak*: sso for users' persisting.
+  - *Postgres*: data persistence required by keycloak.
+
+### APPLICATIONS
+
+##### personal apis
+- [x] api-gateway
+- [x] demo-service
+
+##### api utilities
+- [x] keycloak
+- [ ] granfana
+- [ ] prometheus
+- [ ] cadavisor
 
 ### Commands
 __1. Kubectl__
@@ -21,12 +35,23 @@ __1. Kubectl__
 
 __2. Minikube__
 
-| Description          | Value                         |
-|----------------------|-------------------------------|
-| open dashboard       | minikube dashboard            |
-| get closter ip       | minikube ip                   |
-| open tune by service | minikube service file-service |
-| open tunel all       | minikube tunnel               |
+| Description                 | Value                         |
+|-----------------------------|-------------------------------|
+| start minikube              | minikube start                |
+| stop minikube               | minikube stop                 |
+| open dashboard              | minikube dashboard            |
+| get closter ip              | minikube ip                   |
+| open tune by service        | minikube service file-service |
+| open tunel all              | minikube tunnel               |
+| delete images into minikube | minikube ssh                  |
+
+
+### Keycloak
+  - Documentation
+    - https://www.keycloak.org/documentation
+  - Configuration
+    - https://www.youtube.com/watch?v=zR3igUft1KA&t=2044s
+    - https://medium.com/@kaloyanmanev/bitnami-keycloack-inside-docker-compose-import-realm-on-startup-3627a7da7f39
 
 
 prometheus

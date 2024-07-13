@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway-deployment
+  labels:
+    app: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: furialfonso/api-gateway-service:test
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081
+              name: gatewayport
+          env:
+            # - name: APPLICATION_NAME
+            #   value: "xxx"
+            # - name: INTERNAL_PORT
+            #   value: "8081"
+            - name: SPRING_CONFIG_LOCATION
+              value: "file:/config/application.yml"
+          volumeMounts:
+            - name: config-volume
+              mountPath: "/config"
+              readOnly: true
+      volumes:
+        - name: config-volume
+          configMap:
+            name: api-gateway-configmap

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-service-deployment
+  labels:
+    app: demo-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-service
+  template:
+    metadata:
+      labels:
+        app: demo-service
+    spec:
+      containers:
+        - name: demo-service
+          image: furialfonso/demo-service:test
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8082
+              name: demoport
+          env:
+            - name: APPLICATION_NAME
+              value: "demo-service"
+            - name: INTERNAL_PORT
+              value: "8082"
