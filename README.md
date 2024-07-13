@@ -23,6 +23,7 @@ __2. Minikube__
 
 | Description          | Value                         |
 |----------------------|-------------------------------|
+| open dashboard       | minikube dashboard            |
 | get closter ip       | minikube ip                   |
 | open tune by service | minikube service file-service |
 | open tunel all       | minikube tunnel               |
