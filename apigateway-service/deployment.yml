@@ -22,10 +22,6 @@ spec:
             - containerPort: 8081
               name: gatewayport
           env:
-            # - name: APPLICATION_NAME
-            #   value: "xxx"
-            # - name: INTERNAL_PORT
-            #   value: "8081"
             - name: SPRING_CONFIG_LOCATION
               value: "file:/config/application.yml"
           volumeMounts:

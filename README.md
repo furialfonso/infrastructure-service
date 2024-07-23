@@ -7,14 +7,13 @@ Infrastructure build on kubernetes with minikube
 
 ### Technologies
   - *Kubernetes*: Portable and extensible open source platform for managing workloads and services.
-  - *Keycloak*: sso for users' persisting.
-  - *Postgres*: data persistence required by keycloak.
 
 ### APPLICATIONS
 
 ##### personal apis
-- [x] api-gateway
+- [x] api-gateway-service
 - [x] demo-service
+- [x] sso-service
 
 ##### api utilities
 - [x] keycloak
