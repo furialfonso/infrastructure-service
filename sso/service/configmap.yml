@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sso-service-configmap
+  labels:
+    app: sso
+data:
+  SCOPE: test
+  PORT: "8083"
+  CONFIG_DIR: "/config"
+  GIN_MODE: "release"
+  properties.yml: |
+    keycloak:
+      host: http://keycloak-service:8080
+      realm-admin: master
+      user: furialfonso
+      pass: Admin123
+      realm: development
+      client: cow
+    cow-api:
+      url: http://localhost:8080
+      timeout: 5s

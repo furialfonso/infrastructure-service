@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sso-service-deployment
+  labels:
+    app: sso
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sso-service
+  template:
+    metadata:
+      labels:
+        app: sso-service
+    spec:
+      containers:
+        - name: sso-service
+          image: furialfonso/sso-service:test
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8083
+              name: sso-port
+          envFrom:
+            - secretRef:
+                name: sso-service-secret
+            - configMapRef:
+                name: sso-service-configmap
+          volumeMounts:
+            - name: config-volume
+              mountPath: "/config"
+              readOnly: true
+      volumes:
+        - name: config-volume
+          configMap:
+            name: sso-service-configmap
