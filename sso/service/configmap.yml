@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: sso-service-configmap
   labels:
-    app: sso
+    app: sso-service
 data:
   SCOPE: test
   PORT: "8083"

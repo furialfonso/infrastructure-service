@@ -8,7 +8,6 @@ spec:
   ports:
   - name: demo-service
     port: 8082
-    nodePort: 30003
-  type: NodePort
+  type: ClusterIP
   selector:
     app: demo-service

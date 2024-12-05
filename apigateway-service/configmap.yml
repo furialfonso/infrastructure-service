@@ -24,7 +24,7 @@ data:
             - id: authentication
               uri: http://sso-service:8083
               predicates:
-                - Path=/auth/login, /auth/logout, /auth/valid-token
+                - Path=/auth/login, /auth/logout, /auth/valid-token, /metrics
             - id: authorization
               uri: http://sso-service:8083
               predicates:

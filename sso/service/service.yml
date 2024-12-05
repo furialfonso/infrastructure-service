@@ -3,12 +3,11 @@ kind: Service
 metadata:
   name: sso-service
   labels:
-    app: sso
+    app: sso-service
 spec:
   ports:
   - name: sso-service
     port: 8083
-    nodePort: 30004
-  type: NodePort
+  type: ClusterIP
   selector:
     app: sso-service

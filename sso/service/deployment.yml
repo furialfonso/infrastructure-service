@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: sso-service-deployment
   labels:
-    app: sso
+    app: sso-service
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: sso-service
@@ -21,6 +21,11 @@ spec:
           ports:
             - containerPort: 8083
               name: sso-port
+          env:
+            - name: INSTANCE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.uid
           envFrom:
             - secretRef:
                 name: sso-service-secret

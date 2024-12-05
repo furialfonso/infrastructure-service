@@ -18,19 +18,20 @@ Infrastructure build on kubernetes with minikube
 ##### api utilities
 - [x] keycloak
 - [ ] granfana
-- [ ] prometheus
-- [ ] cadavisor
+- [x] prometheus
+- [X] cadavisor
 
 ### Commands
 __1. Kubectl__
 
-| Description     | Value                      |
-|-----------------|----------------------------|
-| version         | kubectl api-version        |
-| upload object   | kubectl apply -f file.yml  |
-| download object | kubectl delete -f file.yml |
-| see objects     | kubectl get all            |
-| see object      | kubectl get pods           |
+| Description       | Value                             |
+|-------------------|-----------------------------------|
+| version           | kubectl api-version               |
+| upload object     | kubectl apply -f file.yml         |
+| delete object     | kubectl delete -f file.yml        |
+| see objects       | kubectl get all                   |
+| see object        | kubectl get pods                  |
+| upload/delete all | kubectl apply/delete -f directory |
 
 __2. Minikube__
 
@@ -45,6 +46,12 @@ __2. Minikube__
 | delete images into minikube | minikube ssh                  |
 
 
+__3. Grafana__
+
+| Description       | Value                                                                 |
+|-------------------|-----------------------------------------------------------------------|
+| RPM               | sum by (path) (rate(http_requests_total{job="sso-service"}[1m]) * 60) |
+|                   |                                                                       |
 ### Keycloak
   - Documentation
     - https://www.keycloak.org/documentation
