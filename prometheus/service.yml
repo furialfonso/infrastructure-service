@@ -8,6 +8,5 @@ spec:
   ports:
   - name: prometheus
     port: 9090
-  type: LoadBalancer
   selector:
     app: prometheus
