@@ -2,6 +2,8 @@
 
 Infrastructure build on kubernetes with minikube
 
+  * https://whimsical.com/cow-XkzoMTqYJ3V1rBVFw9C3tR
+
 ### Author
   - *Andres Felipe Alfonso Ortiz*
 
@@ -11,13 +13,15 @@ Infrastructure build on kubernetes with minikube
 ### APPLICATIONS
 
 ##### personal apis
-- [x] api-gateway-service
-- [x] demo-service
-- [x] sso-service
+- [x] api-gateway-service: https://github.com/furialfonso/api-gateway-service
+- [x] demo-service: https://github.com/furialfonso/demo-service
+- [x] sso-service: https://github.com/furialfonso/sso-service
+- [x] cow-comp-front: https://github.com/furialfonso/cow-comp-front
+- [x] cow-front: https://github.com/furialfonso/cow-front
 
 ##### api utilities
 - [x] keycloak
-- [ ] granfana
+- [x] granfana
 - [x] prometheus
 - [X] cadavisor
 

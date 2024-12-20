@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: user-front-config
+  name: cow-comp-front-config
 data:
   default.conf: |
     server {
