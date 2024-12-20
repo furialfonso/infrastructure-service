@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-front-service
+spec:
+  selector:
+    app: user-front
+  ports:
+  - name: user-front
+    port: 8084
+    targetPort: 3000
+  type: ClusterIP
