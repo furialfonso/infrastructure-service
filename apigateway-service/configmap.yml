@@ -16,6 +16,20 @@ data:
           discovery:
             locator:
               enabled: true
+          globalcors:
+            corsConfigurations:
+              '[/**]':
+                allowedOriginPatterns:
+                  - "*"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowedHeaders:
+                  - "*"
+                allowCredentials: true
           routes:
             - id: demo-service
               uri: http://demo-service:8082
@@ -31,3 +45,7 @@ data:
                 - Path=/users/**
               filters:
                 - name: AuthorizationFilter
+            - id: user-front
+              uri: http://user-front-service:8084
+              predicates:
+                - Path=/assets/**
