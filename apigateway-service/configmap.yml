@@ -45,7 +45,7 @@ data:
                 - Path=/users/**
               filters:
                 - name: AuthorizationFilter
-            - id: user-front
-              uri: http://user-front-service:8084
+            - id: cow-comp-front
+              uri: http://cow-comp-front-service:8084
               predicates:
                 - Path=/assets/**
