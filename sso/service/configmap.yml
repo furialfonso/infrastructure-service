@@ -12,10 +12,7 @@ data:
   properties.yml: |
     keycloak:
       host: http://keycloak-service:8080
-      realm-admin: master
-      user: furialfonso
-      pass: Admin123
-      realm: development
+      realm: SSO
       client: cow
     cow-api:
       url: http://localhost:8080
