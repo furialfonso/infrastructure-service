@@ -43,6 +43,7 @@ __2. Minikube__
 |-----------------------------|-------------------------------|
 | start minikube              | minikube start                |
 | stop minikube               | minikube stop                 |
+| delete instance minikube    | minikube delete               |
 | open dashboard              | minikube dashboard            |
 | get closter ip              | minikube ip                   |
 | open tune by service        | minikube service file-service |
